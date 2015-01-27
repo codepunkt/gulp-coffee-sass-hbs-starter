@@ -14,6 +14,10 @@ Includes the following tools, tasks, and workflows:
 - Separate compression task using [Uglify.js](https://github.com/terinjokes/gulp-uglify) for production builds
 - Static asset revisioning by appending content hash to filenames using [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
+- - -
+
+### Installation
+
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
 
