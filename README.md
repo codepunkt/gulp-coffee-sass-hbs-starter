@@ -5,7 +5,7 @@ Starter Gulp project with examples of how to accomplish some common tasks and wo
 
 Includes the following tools, tasks, and workflows:
 
-- [SASS](http://sass-lang.com/) with [autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer))
+- [SASS](http://sass-lang.com/) with [autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
 - [CoffeeScript](http://coffeescript.org/) linted by [CoffeeLint](https://github.com/janraasch/gulp-coffeelint)
 - [Browserify](http://browserify.org/) using [coffeeify](https://github.com/jnordberg/coffeeify) and [hbsfy](https://github.com/epeli/node-hbsfy) transforms
 - [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
