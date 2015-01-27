@@ -57,10 +57,14 @@ Without further arguments, the task is run in development mode, where it has the
 
 ![task dependencies dev](dev.png)
 
-- The `sass` task compiles your css files.
-- `images` moves images copies images from a source folder, performs optimizations, the outputs them into the dist folder
-- `markup` doesn't do anything but copy an html file over from src to dist, but here is where you could do additional templating work.
-- `watch` has `watchify` as a dependency, which will run the browserifyTask with a `devMode` flag that enables sourcemaps and watchify, a browserify add-on that enables caching for super fast recompiling. The task itself starts watching source files and will re-run the appropriate tasks when those files change.
+- The `clean` task cleans your dist folder
+- `lint` checks the `.coffee` files in both source and gulp directories for codestyle validations (rules are defined in `coffeelint.json`)
+- `images` copies images from source to dist folder
+- `hbs` compiles `index.hbs` from source to `index.html` in dist
+- `sass` compiles `.sass` files from source to a single `.css` file with inline sourcemap in dist
+- `browserify` runs using `watchify` and the `coffeeify` and `hbsfy` transforms, compiling `app.coffee` from source with all its dependencies, including handlebars templates, to a single `app.js` file with inline sourcemap in dist
+- `localhost` boots up a local web server that serves your dist folder at `localhost:3000`
+- `watch` starts watching source files and will re-run the appropriate tasks when those files change (excluding the compilation of `.coffee` files, which is handled by `watchify`
 
 - - -
 
