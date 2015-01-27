@@ -44,14 +44,16 @@ alias gulp='node_modules/.bin/gulp'
 ```
 Now, running `gulp` in the project directory will use the version specified and installed from the `package.json` file.
 
-### Run gulp and be amazed.
+- - -
 
-```
+### Development
+
+```shell
 gulp
 ```
 
 This will run the `default` gulp task defined in `gulp/tasks/default.coffee`.
-Without further arguments, the task is run in development mode, where it has these task dependencies:
+Without further arguments, the task is run in development mode, where it has these dependencies:
 
 ![task dependencies dev](dev.png)
 
@@ -60,9 +62,15 @@ Without further arguments, the task is run in development mode, where it has the
 - `markup` doesn't do anything but copy an html file over from src to dist, but here is where you could do additional templating work.
 - `watch` has `watchify` as a dependency, which will run the browserifyTask with a `devMode` flag that enables sourcemaps and watchify, a browserify add-on that enables caching for super fast recompiling. The task itself starts watching source files and will re-run the appropriate tasks when those files change.
 
-#### gulp --prod
+- - -
 
-There is also a production mode you can run with `gulp --prod`, which will build optimized, compressed css, js and image files to the dist folder, as well as output their file sizes to the console. The `default` task in production mode has these task dependencies:
+### Production
+
+```shell
+gulp --prod
+```
+
+There will run the default task defined in `gulp/tasks/default.coffee` in production mode, which has these task dependencies:
 
 ![task dependencies prod](prod.png)
 
