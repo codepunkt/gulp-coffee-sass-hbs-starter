@@ -53,7 +53,7 @@ gulp
 This will run the `default` gulp task defined in `gulp/tasks/default.coffee`.
 Without further arguments, the task is run in development mode, where it has these task dependencies:
 
-![task dependencies dev](dev.svg)
+![task dependencies dev](dev.png)
 
 - The `sass` task compiles your css files.
 - `images` moves images copies images from a source folder, performs optimizations, the outputs them into the dist folder
@@ -64,7 +64,7 @@ Without further arguments, the task is run in development mode, where it has the
 
 There is also a production mode you can run with `gulp --prod`, which will build optimized, compressed css, js and image files to the dist folder, as well as output their file sizes to the console. The `default` task in production mode has these task dependencies:
 
-![task dependencies prod](prod.svg)
+![task dependencies prod](prod.png)
 
 ### Configuration
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.coffee`. Adapt the paths and settings to the structure and needs of your project.
