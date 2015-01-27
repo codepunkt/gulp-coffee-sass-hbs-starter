@@ -16,7 +16,7 @@ Includes the following tools, tasks, and workflows:
 
 - - -
 
-### Installation
+## Installation
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
@@ -27,14 +27,14 @@ brew install node
 
 Otherwise, you can download and install from [here](http://nodejs.org/download/).
 
-### Install npm dependencies
+#### Install npm dependencies
 ```
 npm install
 ```
 
 This runs through all dependencies listed in `package.json` and downloads them to a `node_modules` folder in your project directory.
 
-### The `gulp` command
+#### The `gulp` command
 To run the version of gulp installed local to the project, in the root of your this project, you'd run
 
 ```
@@ -50,7 +50,7 @@ Now, running `gulp` in the project directory will use the version specified and 
 
 - - -
 
-### Development
+## Development
 
 ```shell
 gulp
@@ -72,15 +72,15 @@ Without further arguments, the task is run in development mode, where it has the
 
 - - -
 
-### Production
+## Starting a production build
 
 ```shell
 gulp --prod
 ```
 
-There will run the default task defined in `gulp/tasks/default.coffee` in production mode, which has these task dependencies:
+This will run the default task defined in `gulp/tasks/default.coffee` in production mode, which has these task dependencies:
 
 ![task dependencies prod](prod.png)
 
-### Configuration
+## Configuration
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.coffee`. Adapt the paths and settings to the structure and needs of your project.
