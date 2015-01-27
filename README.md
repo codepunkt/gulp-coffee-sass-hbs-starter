@@ -11,8 +11,8 @@ Includes the following tools, tasks, and workflows:
 - [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
 - [BrowserSync](http://browsersync.io) for live reloading and a static server
 - [Image optimization](https://www.npmjs.com/package/gulp-imagemin)
-- Error handling in the console [and in Notification Center](https://github.com/mikaelbr/gulp-notify)
 - Separate compression task using [Uglify.js](https://github.com/terinjokes/gulp-uglify) for production builds
+- Static asset revisioning by appending content hash to filenames using [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
