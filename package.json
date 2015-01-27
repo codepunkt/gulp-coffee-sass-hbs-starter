@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Christoph Werner <cwe@pixum.com>",
+  "author": "Christoph Werner <gonsfx@googlemail.com>",
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "browserify": "^8.1.1",
