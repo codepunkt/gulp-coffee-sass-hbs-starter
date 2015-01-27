@@ -62,10 +62,10 @@ Without further arguments, the task is run in development mode, where it has the
 ![task dependencies dev](dev.png)
 
 - The `clean` task cleans your dist folder
-- `lint` checks the `.coffee` files in both source and gulp directories for codestyle validations (rules are defined in `coffeelint.json`)
-- `images` copies images from source to dist folder
+- `lint` checks the `.coffee` files in both source and gulp directories for codestyle validations (rules are defined in `coffeelint.json`) and shows them on both the console and the operating system notification area
+- `image` copies images from source to dist folder
 - `hbs` compiles `index.hbs` from source to `index.html` in dist
-- `sass` compiles `.sass` files from source to a single `.css` file with inline sourcemap in dist
+- `sass` compiles `.sass` files from source to a single `.css` files with inline sourcemap in dist
 - `browserify` runs using `watchify` and the `coffeeify` and `hbsfy` transforms, compiling `app.coffee` from source with all its dependencies, including handlebars templates, to a single `app.js` file with inline sourcemap in dist
 - `localhost` boots up a local web server that serves your dist folder at `localhost:3000`
 - `watch` starts watching source files and will re-run the appropriate tasks when those files change (excluding the compilation of `.coffee` files, which is handled by `watchify`
@@ -81,6 +81,15 @@ gulp --prod
 This will run the default task defined in `gulp/tasks/default.coffee` in production mode, which has these task dependencies:
 
 ![task dependencies prod](prod.png)
+
+- The `clean` task cleans your dist folder
+- `lint` checks the `.coffee` files in both source and gulp directories for codestyle validations (rules are defined in `coffeelint.json`) and cancels the build when an error is encountered
+- `image` places minified copies of images from source folder in dist folder
+- `sass` compiles `.sass` files from source to a `.css` files with a sourcemap comment and corresponding `.css.map` files
+- `browserify` runs using the `coffeeify` and `hbsfy` transforms, compiling `app.coffee` from source with all its dependencies, including handlebars templates, to a `app.js` and `app.js.map` files in dist
+- `uglify` minfies the resulting `app.js` while keeping sourcemaps intact
+- `rev` appends content hashes to the filenames of all image, coffee and sass files in dist folder, deletes the original files and writes a `rev-manifest.json` mapping the original filesnames to those with content hashes
+- `hbs` reads the `rev-manifest.json` and compiles `index.hbs` from source to `index.html` in dist, changing the paths of the used files to the hashed files.
 
 ## Configuration
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.coffee`. Adapt the paths and settings to the structure and needs of your project.
