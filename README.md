@@ -88,7 +88,7 @@ This will run the default task defined in `gulp/tasks/default.coffee` in product
 - `sass` compiles `.sass` files from source to a `.css` files with a sourcemap comment and corresponding `.css.map` files
 - `browserify` runs using the `coffeeify` and `hbsfy` transforms, compiling `app.coffee` from source with all its dependencies, including handlebars templates, to a `app.js` and `app.js.map` files in dist
 - `uglify` minfies the resulting `app.js` while keeping sourcemaps intact
-- `rev` appends content hashes to the filenames of all image, coffee and sass files in dist folder, deletes the original files and writes a `rev-manifest.json` mapping the original filesnames to those with content hashes
+- `rev` appends content hashes to the filenames of all image, js and css files in dist folder, deletes the original files and writes a `rev-manifest.json` mapping the original filesnames to those with content hashes
 - `hbs` reads the `rev-manifest.json` and compiles `index.hbs` from source to `index.html` in dist, changing the paths of the used files to the hashed ones.
 
 ## Configuration
